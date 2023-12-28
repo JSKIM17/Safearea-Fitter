@@ -23,8 +23,6 @@ MIT License
 */
 
 
-
-
 using UnityEngine;
 
 [RequireComponent(typeof(RectTransform))]
@@ -44,16 +42,18 @@ public class SafeAreaFitter : MonoBehaviour
 		Vector2 size = GetCurrentResolution();
 
 		Vector2 zeroPoint = new Vector2(safeArea.xMin, safeArea.yMin);
-		//Anchor Min
-		float btAdj = 0;
+		//Anchor Min(vertical bottom)
+		float gap = 0;
 		if(UnityEngine.iOS.Device.generation >= UnityEngine.iOS.DeviceGeneration.iPhoneX) {
-			btAdj = 10;
+			//you can add small gap in zeroPoint
+			gap = 10;
 		}
-		Vector2 newAnchorMin = new Vector2(safeArea.xMin, btAdj);
+		Vector2 newAnchorMin = zeroPoint;
 		newAnchorMin.x /= size.x;
 		newAnchorMin.y /= size.y;
 
-		//Anchor Max
+		//Anchor Max(vertical top)
+		//if you need perpectly fit safearea, remove "+safeArea.yMin"
 		float y = safeArea.height + safeArea.yMin;
 		Vector2 adj = new Vector2(safeArea.width, y);
 		Vector2 newAnchorMax = zeroPoint + adj;
