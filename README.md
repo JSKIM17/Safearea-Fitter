@@ -1,5 +1,5 @@
 Safe Area Fitter that edit RectTransform's anchor under Canvas
-for Mobile Device(IOS, ANDROID, ....)
+for Unity Mobile Develop(IOS, ANDROID, ....)
 
 How to Use?
 - Add to the object under the canvas and call FitSafeArea(or called automatically with Awake).
@@ -7,7 +7,7 @@ How to Use?
 
 
 
-모바일 대상 세이프 에어리어 편집기
+유니티 모바일 대상 세이프 에어리어 편집기
 아이폰이나 안드로이드 탈모 처리용
 
 사용법
